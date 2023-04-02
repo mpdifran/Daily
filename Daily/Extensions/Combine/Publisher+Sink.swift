@@ -10,6 +10,15 @@ import Combine
 
 extension Publisher {
 
+    func receiveCompletion(andStoreIn set: inout Set<AnyCancellable>, receiveCompletion: @escaping ((Subscribers.Completion<Self.Failure>) -> Void)) {
+        sink { (completion) in
+            receiveCompletion(completion)
+        } receiveValue: { _ in
+
+        }
+        .store(in: &set)
+    }
+
     func handleErrorAndStore(in set: inout Set<AnyCancellable>, errorHandler: @escaping (Error) -> Void) {
         sink { (completion) in
             switch completion {

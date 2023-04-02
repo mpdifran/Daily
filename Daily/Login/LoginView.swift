@@ -20,6 +20,7 @@ struct LoginView: View {
     @State private var error: Error?
     @State private var email = ""
     @State private var password = ""
+    @State private var isLoggingIn = false
 
     @FocusState private var focusedField: Field?
 
@@ -51,11 +52,19 @@ struct LoginView: View {
             }
 
             Button {
+                guard !isLoggingIn else { return }
+
                 login()
             } label: {
-                Text("Log In")
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 40)
+                Group {
+                    if isLoggingIn {
+                        ProgressView()
+                    } else {
+                        Text("Log In")
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 40)
             }
             .buttonStyle(.borderedProminent)
             .padding()
@@ -84,10 +93,17 @@ private extension LoginView {
 private extension LoginView {
 
     func login() {
+        isLoggingIn = true
         viewModel
             .login(withEmail: email, password: password)
-            .handleErrorAndStore(in: &subscriptions) { (error) in
-                self.error = error
+            .receiveCompletion(andStoreIn: &subscriptions) { (completion) in
+                self.isLoggingIn = false
+                switch completion {
+                case .failure(let error):
+                    self.error = error
+                case .finished:
+                    break
+                }
             }
     }
 }
