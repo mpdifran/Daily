@@ -16,6 +16,9 @@ final class MainAssembler {
 
     init() {
         assembler.apply(assemblies: LoginAssemblies)
+        assembler.apply(assemblies: UserAssemblies)
         assembler.apply(assemblies: NetworkAssemblies)
+
+        assembler.apply(assembly: DailyAppViewModelAssembly())
     }
 }

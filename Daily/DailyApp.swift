@@ -10,12 +10,28 @@ import SwiftUI
 @main
 struct DailyApp: App {
 
-    let mainAssembler = MainAssembler()
+    private let mainAssembler: MainAssembler
+    private let viewModel: DailyAppViewModel
+
+    init() {
+        let mainAssembler = MainAssembler()
+
+        self.mainAssembler = mainAssembler
+        self.viewModel = mainAssembler.resolver.unsafeResolve(DailyAppViewModel.self)
+    }
 
     var body: some Scene {
         WindowGroup {
-            RootView(resolver: mainAssembler.resolver)
-                .environment(\.resolver, mainAssembler.resolver)
+            Group {
+                if viewModel.isAuthenticated {
+                    RootView(resolver: mainAssembler.resolver)
+                        .transition(.opacity.animation(.default))
+                } else {
+                    LoginView(resolver: mainAssembler.resolver)
+                        .transition(.opacity.animation(.default))
+                }
+            }
+            .environment(\.resolver, mainAssembler.resolver)
         }
     }
 }

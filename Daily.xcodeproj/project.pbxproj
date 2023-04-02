@@ -26,6 +26,10 @@
 		FF0B961D29D9E729006553AC /* PreviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B961C29D9E729006553AC /* PreviewHelper.swift */; };
 		FF0B962029D9E896006553AC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B961F29D9E896006553AC /* RootView.swift */; };
 		FF0B962329D9E8CF006553AC /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B962229D9E8CF006553AC /* JournalView.swift */; };
+		FF0B962629D9FAAF006553AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B962529D9FAAF006553AC /* User.swift */; };
+		FF0B962829D9FB25006553AC /* UserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B962729D9FB25006553AC /* UserCoordinator.swift */; };
+		FF0B962E29D9FCC1006553AC /* UserAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B962D29D9FCC1006553AC /* UserAssemblies.swift */; };
+		FF0B963329D9FE31006553AC /* DailyAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B963229D9FE31006553AC /* DailyAppViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,10 @@
 		FF0B961C29D9E729006553AC /* PreviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelper.swift; sourceTree = "<group>"; };
 		FF0B961F29D9E896006553AC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FF0B962229D9E8CF006553AC /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		FF0B962529D9FAAF006553AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FF0B962729D9FB25006553AC /* UserCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoordinator.swift; sourceTree = "<group>"; };
+		FF0B962D29D9FCC1006553AC /* UserAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAssemblies.swift; sourceTree = "<group>"; };
+		FF0B963229D9FE31006553AC /* DailyAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAppViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +92,13 @@
 				FF0B961E29D9E888006553AC /* Root */,
 				FF0B962129D9E8C4006553AC /* Journal */,
 				FF0B961129D9E2B5006553AC /* Login */,
+				FF0B962429D9FA9E006553AC /* User */,
 				FF0B95F029D9D88B006553AC /* Network */,
 				FF0B961429D9E52D006553AC /* DependencyInjection */,
 				FF0B961B29D9E70D006553AC /* Utilities */,
 				FF0B960029D9DA01006553AC /* Extensions */,
 				FF0B95DC29D9D630006553AC /* DailyApp.swift */,
+				FF0B963229D9FE31006553AC /* DailyAppViewModel.swift */,
 				FF0B960429D9DBE9006553AC /* MainAssembler.swift */,
 				FF0B95DE29D9D630006553AC /* ContentView.swift */,
 				FF0B95E029D9D631006553AC /* Assets.xcassets */,
@@ -117,8 +127,8 @@
 		FF0B960029D9DA01006553AC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FF0B960129D9DA1A006553AC /* NSError+LocalizedDescription.swift */,
-				FF0B961729D9E638006553AC /* Resolver+Unsafe.swift */,
+				FF0B963029D9FD6F006553AC /* Swinject */,
+				FF0B962F29D9FD68006553AC /* Foundation */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -172,6 +182,32 @@
 				FF0B962229D9E8CF006553AC /* JournalView.swift */,
 			);
 			path = Journal;
+			sourceTree = "<group>";
+		};
+		FF0B962429D9FA9E006553AC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B962729D9FB25006553AC /* UserCoordinator.swift */,
+				FF0B962529D9FAAF006553AC /* User.swift */,
+				FF0B962D29D9FCC1006553AC /* UserAssemblies.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		FF0B962F29D9FD68006553AC /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B960129D9DA1A006553AC /* NSError+LocalizedDescription.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		FF0B963029D9FD6F006553AC /* Swinject */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B961729D9E638006553AC /* Resolver+Unsafe.swift */,
+			);
+			path = Swinject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,12 +292,16 @@
 				FF0B960229D9DA1A006553AC /* NSError+LocalizedDescription.swift in Sources */,
 				FF0B961A29D9E6CC006553AC /* LoginAssemblies.swift in Sources */,
 				FF0B95DF29D9D630006553AC /* ContentView.swift in Sources */,
+				FF0B963329D9FE31006553AC /* DailyAppViewModel.swift in Sources */,
+				FF0B962629D9FAAF006553AC /* User.swift in Sources */,
 				FF0B962029D9E896006553AC /* RootView.swift in Sources */,
 				FF0B961329D9E2D2006553AC /* LoginViewModel.swift in Sources */,
 				FF0B962329D9E8CF006553AC /* JournalView.swift in Sources */,
 				FF0B95F229D9D8AB006553AC /* CNURLSession.swift in Sources */,
+				FF0B962E29D9FCC1006553AC /* UserAssemblies.swift in Sources */,
 				FF0B960729D9DC4F006553AC /* NetworkAssemblies.swift in Sources */,
 				FF0B961629D9E54B006553AC /* ResolverEnvironmentKey.swift in Sources */,
+				FF0B962829D9FB25006553AC /* UserCoordinator.swift in Sources */,
 				FF0B95DD29D9D630006553AC /* DailyApp.swift in Sources */,
 				FF0B961829D9E638006553AC /* Resolver+Unsafe.swift in Sources */,
 				FF0B95FF29D9D9B7006553AC /* CNURLSessionMock.swift in Sources */,
