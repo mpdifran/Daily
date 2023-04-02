@@ -44,6 +44,10 @@
 		FF0B965029DA0C8C006553AC /* DailyGoalsAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B964F29DA0C8C006553AC /* DailyGoalsAssemblies.swift */; };
 		FF0B965229DA0EB0006553AC /* JournalAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965129DA0EB0006553AC /* JournalAssemblies.swift */; };
 		FF0B965429DA0FBC006553AC /* DailyGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965329DA0FBC006553AC /* DailyGoalCell.swift */; };
+		FF0B965729DA1216006553AC /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965629DA1216006553AC /* AccountView.swift */; };
+		FF0B965929DA126E006553AC /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965829DA126E006553AC /* AccountViewModel.swift */; };
+		FF0B965B29DA140C006553AC /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965A29DA140C006553AC /* AccountCell.swift */; };
+		FF0B965D29DA1506006553AC /* AccountAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965C29DA1506006553AC /* AccountAssemblies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +87,10 @@
 		FF0B964F29DA0C8C006553AC /* DailyGoalsAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalsAssemblies.swift; sourceTree = "<group>"; };
 		FF0B965129DA0EB0006553AC /* JournalAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAssemblies.swift; sourceTree = "<group>"; };
 		FF0B965329DA0FBC006553AC /* DailyGoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalCell.swift; sourceTree = "<group>"; };
+		FF0B965629DA1216006553AC /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		FF0B965829DA126E006553AC /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		FF0B965A29DA140C006553AC /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		FF0B965C29DA1506006553AC /* AccountAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssemblies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 				FF0B961E29D9E888006553AC /* Root */,
 				FF0B962129D9E8C4006553AC /* Journal */,
 				FF0B964829DA0AC2006553AC /* DailyGoals */,
+				FF0B965529DA1206006553AC /* Account */,
 				FF0B961129D9E2B5006553AC /* Login */,
 				FF0B962429D9FA9E006553AC /* User */,
 				FF0B95F029D9D88B006553AC /* Network */,
@@ -292,6 +301,17 @@
 			path = DailyGoals;
 			sourceTree = "<group>";
 		};
+		FF0B965529DA1206006553AC /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B965629DA1216006553AC /* AccountView.swift */,
+				FF0B965A29DA140C006553AC /* AccountCell.swift */,
+				FF0B965829DA126E006553AC /* AccountViewModel.swift */,
+				FF0B965C29DA1506006553AC /* AccountAssemblies.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -375,11 +395,13 @@
 				FF0B960229D9DA1A006553AC /* NSError+LocalizedDescription.swift in Sources */,
 				FF0B963929DA0181006553AC /* URL+User.swift in Sources */,
 				FF0B964329DA07CC006553AC /* JustVoidError.swift in Sources */,
+				FF0B965729DA1216006553AC /* AccountView.swift in Sources */,
 				FF0B961A29D9E6CC006553AC /* LoginAssemblies.swift in Sources */,
 				FF0B95DF29D9D630006553AC /* ContentView.swift in Sources */,
 				FF0B964129DA048C006553AC /* Binding+Optional.swift in Sources */,
 				FF0B963329D9FE31006553AC /* DailyAppViewModel.swift in Sources */,
 				FF0B962629D9FAAF006553AC /* User.swift in Sources */,
+				FF0B965D29DA1506006553AC /* AccountAssemblies.swift in Sources */,
 				FF0B962029D9E896006553AC /* RootView.swift in Sources */,
 				FF0B961329D9E2D2006553AC /* LoginViewModel.swift in Sources */,
 				FF0B964E29DA0B44006553AC /* JournalViewModel.swift in Sources */,
@@ -389,11 +411,13 @@
 				FF0B95F229D9D8AB006553AC /* CNURLSession.swift in Sources */,
 				FF0B962E29D9FCC1006553AC /* UserAssemblies.swift in Sources */,
 				FF0B964A29DA0AD0006553AC /* DailyGoal.swift in Sources */,
+				FF0B965929DA126E006553AC /* AccountViewModel.swift in Sources */,
 				FF0B960729D9DC4F006553AC /* NetworkAssemblies.swift in Sources */,
 				FF0B961629D9E54B006553AC /* ResolverEnvironmentKey.swift in Sources */,
 				FF0B965229DA0EB0006553AC /* JournalAssemblies.swift in Sources */,
 				FF0B962829D9FB25006553AC /* UserCoordinator.swift in Sources */,
 				FF0B95DD29D9D630006553AC /* DailyApp.swift in Sources */,
+				FF0B965B29DA140C006553AC /* AccountCell.swift in Sources */,
 				FF0B961829D9E638006553AC /* Resolver+Unsafe.swift in Sources */,
 				FF0B964C29DA0B0D006553AC /* DailyGoalCoordinator.swift in Sources */,
 				FF0B963629DA00F3006553AC /* UserService.swift in Sources */,

@@ -14,6 +14,7 @@ protocol UserCoordinator: AnyObject {
     var user: AnyPublisher<User?, Never> { get }
 
     func login(withEmail email: String, password: String) -> AnyPublisher<Void, Error>
+    func logout()
 }
 
 final class UserCoordinatorImpl {
@@ -42,6 +43,10 @@ extension UserCoordinatorImpl: UserCoordinator {
                 return
             }
             .eraseToAnyPublisher()
+    }
+
+    func logout() {
+        userSubject.send(nil)
     }
 }
 

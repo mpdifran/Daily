@@ -23,4 +23,13 @@ extension Publisher {
         }
         .store(in: &set)
     }
+
+    func sinkAndStore(in set: inout Set<AnyCancellable>) {
+        sink { (_) in
+
+        } receiveValue: { (_) in
+
+        }
+        .store(in: &set)
+    }
 }

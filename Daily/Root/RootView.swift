@@ -20,6 +20,7 @@ struct RootView: View {
     var body: some View {
         TabView {
             JournalView(resolver: resolver)
+            AccountView(resolver: resolver)
         }
     }
 }
