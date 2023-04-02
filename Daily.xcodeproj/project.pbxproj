@@ -43,6 +43,7 @@
 		FF0B964E29DA0B44006553AC /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B964D29DA0B44006553AC /* JournalViewModel.swift */; };
 		FF0B965029DA0C8C006553AC /* DailyGoalsAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B964F29DA0C8C006553AC /* DailyGoalsAssemblies.swift */; };
 		FF0B965229DA0EB0006553AC /* JournalAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965129DA0EB0006553AC /* JournalAssemblies.swift */; };
+		FF0B965429DA0FBC006553AC /* DailyGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965329DA0FBC006553AC /* DailyGoalCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		FF0B964D29DA0B44006553AC /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
 		FF0B964F29DA0C8C006553AC /* DailyGoalsAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalsAssemblies.swift; sourceTree = "<group>"; };
 		FF0B965129DA0EB0006553AC /* JournalAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAssemblies.swift; sourceTree = "<group>"; };
+		FF0B965329DA0FBC006553AC /* DailyGoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				FF0B962229D9E8CF006553AC /* JournalView.swift */,
+				FF0B965329DA0FBC006553AC /* DailyGoalCell.swift */,
 				FF0B964D29DA0B44006553AC /* JournalViewModel.swift */,
 				FF0B965129DA0EB0006553AC /* JournalAssemblies.swift */,
 			);
@@ -394,6 +397,7 @@
 				FF0B961829D9E638006553AC /* Resolver+Unsafe.swift in Sources */,
 				FF0B964C29DA0B0D006553AC /* DailyGoalCoordinator.swift in Sources */,
 				FF0B963629DA00F3006553AC /* UserService.swift in Sources */,
+				FF0B965429DA0FBC006553AC /* DailyGoalCell.swift in Sources */,
 				FF0B964529DA08E8006553AC /* View+Alert.swift in Sources */,
 				FF0B95FF29D9D9B7006553AC /* CNURLSessionMock.swift in Sources */,
 				FF0B963C29DA03CF006553AC /* Publisher+Sink.swift in Sources */,

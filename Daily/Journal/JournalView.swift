@@ -18,8 +18,13 @@ struct JournalView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.goals) { (goal) in
-                Text(goal.title)
+            ScrollView {
+                LazyVStack {
+                    ForEach(viewModel.goals) { (goal) in
+                        DailyGoalCell(dailyGoal: goal)
+                            .padding()
+                    }
+                }
             }
             .animation(.default, value: viewModel.goals)
             .navigationTitle("Journal")
