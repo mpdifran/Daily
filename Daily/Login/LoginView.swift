@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Swinject
+import Combine
 
 struct LoginView: View {
 
@@ -18,10 +19,13 @@ struct LoginView: View {
 
     @Environment(\.resolver) var resolver: Resolver
 
+    @State private var error: Error?
     @State private var email = ""
     @State private var password = ""
 
     @FocusState private var focusedField: Field?
+
+    @State private var subscriptions = Set<AnyCancellable>()
 
     var body: some View {
         VStack(spacing: 0) {
@@ -36,7 +40,7 @@ struct LoginView: View {
                     .submitLabel(.next)
 
                     SecureField("Password", text: $password) {
-                        viewModel.login()
+                        login()
                     }
                     .textContentType(.password)
                     .focused($focusedField, equals: .password)
@@ -49,7 +53,7 @@ struct LoginView: View {
             }
 
             Button {
-                viewModel.login()
+                login()
             } label: {
                 Text("Log In")
                     .frame(maxWidth: .infinity)
@@ -59,6 +63,7 @@ struct LoginView: View {
             .padding()
         }
         .background(ignoresSafeAreaEdges: .all)
+        .alert(error: $error)
     }
 }
 
@@ -75,6 +80,17 @@ private extension LoginView {
         }
         Text("Daily")
             .font(.title)
+    }
+}
+
+private extension LoginView {
+
+    func login() {
+        viewModel
+            .login(withEmail: email, password: password)
+            .handleErrorAndStore(in: &subscriptions) { (error) in
+                self.error = error
+            }
     }
 }
 

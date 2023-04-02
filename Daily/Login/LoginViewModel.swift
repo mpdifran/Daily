@@ -8,15 +8,25 @@
 import Foundation
 import Swinject
 import SwinjectAutoregistration
+import Combine
 
 final class LoginViewModel: ObservableObject {
 
+    private var subscriptions = Set<AnyCancellable>()
+
+    private let userCoordinator: UserCoordinator
+
+    init(userCoordinator: UserCoordinator) {
+        self.userCoordinator = userCoordinator
+    }
 }
 
 extension LoginViewModel {
 
-    func login() {
-        print("Attempting to log in")
+    func login(withEmail email: String, password: String) -> AnyPublisher<Void, Error> {
+        userCoordinator
+            .login(withEmail: email, password: password)
+            .eraseToAnyPublisher()
     }
 }
 

@@ -30,6 +30,14 @@
 		FF0B962829D9FB25006553AC /* UserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B962729D9FB25006553AC /* UserCoordinator.swift */; };
 		FF0B962E29D9FCC1006553AC /* UserAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B962D29D9FCC1006553AC /* UserAssemblies.swift */; };
 		FF0B963329D9FE31006553AC /* DailyAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B963229D9FE31006553AC /* DailyAppViewModel.swift */; };
+		FF0B963629DA00F3006553AC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B963529DA00F3006553AC /* UserService.swift */; };
+		FF0B963929DA0181006553AC /* URL+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B963829DA0181006553AC /* URL+User.swift */; };
+		FF0B963C29DA03CF006553AC /* Publisher+Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B963B29DA03CF006553AC /* Publisher+Sink.swift */; };
+		FF0B963F29DA046A006553AC /* Alert+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B963E29DA046A006553AC /* Alert+Error.swift */; };
+		FF0B964129DA048C006553AC /* Binding+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B964029DA048C006553AC /* Binding+Optional.swift */; };
+		FF0B964329DA07CC006553AC /* JustVoidError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B964229DA07CC006553AC /* JustVoidError.swift */; };
+		FF0B964529DA08E8006553AC /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B964429DA08E8006553AC /* View+Alert.swift */; };
+		FF0B964729DA09B8006553AC /* Publisher+Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B964629DA09B8006553AC /* Publisher+Threading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +63,14 @@
 		FF0B962729D9FB25006553AC /* UserCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoordinator.swift; sourceTree = "<group>"; };
 		FF0B962D29D9FCC1006553AC /* UserAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAssemblies.swift; sourceTree = "<group>"; };
 		FF0B963229D9FE31006553AC /* DailyAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAppViewModel.swift; sourceTree = "<group>"; };
+		FF0B963529DA00F3006553AC /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		FF0B963829DA0181006553AC /* URL+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+User.swift"; sourceTree = "<group>"; };
+		FF0B963B29DA03CF006553AC /* Publisher+Sink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Sink.swift"; sourceTree = "<group>"; };
+		FF0B963E29DA046A006553AC /* Alert+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Error.swift"; sourceTree = "<group>"; };
+		FF0B964029DA048C006553AC /* Binding+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optional.swift"; sourceTree = "<group>"; };
+		FF0B964229DA07CC006553AC /* JustVoidError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustVoidError.swift; sourceTree = "<group>"; };
+		FF0B964429DA08E8006553AC /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
+		FF0B964629DA09B8006553AC /* Publisher+Threading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Threading.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +134,9 @@
 		FF0B95F029D9D88B006553AC /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B963429DA00E7006553AC /* Services */,
 				FF0B960829D9DCB1006553AC /* URLSession */,
+				FF0B963729DA0175006553AC /* Extensions */,
 				FF0B960629D9DC4F006553AC /* NetworkAssemblies.swift */,
 			);
 			path = Network;
@@ -127,6 +145,8 @@
 		FF0B960029D9DA01006553AC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B963D29DA045F006553AC /* UserInterface */,
+				FF0B963A29DA03C2006553AC /* Combine */,
 				FF0B963029D9FD6F006553AC /* Swinject */,
 				FF0B962F29D9FD68006553AC /* Foundation */,
 			);
@@ -210,6 +230,42 @@
 			path = Swinject;
 			sourceTree = "<group>";
 		};
+		FF0B963429DA00E7006553AC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B963529DA00F3006553AC /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FF0B963729DA0175006553AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B963829DA0181006553AC /* URL+User.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF0B963A29DA03C2006553AC /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B963B29DA03CF006553AC /* Publisher+Sink.swift */,
+				FF0B964629DA09B8006553AC /* Publisher+Threading.swift */,
+				FF0B964229DA07CC006553AC /* JustVoidError.swift */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
+		FF0B963D29DA045F006553AC /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B964429DA08E8006553AC /* View+Alert.swift */,
+				FF0B963E29DA046A006553AC /* Alert+Error.swift */,
+				FF0B964029DA048C006553AC /* Binding+Optional.swift */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,14 +344,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF0B964729DA09B8006553AC /* Publisher+Threading.swift in Sources */,
 				FF0B961D29D9E729006553AC /* PreviewHelper.swift in Sources */,
 				FF0B960229D9DA1A006553AC /* NSError+LocalizedDescription.swift in Sources */,
+				FF0B963929DA0181006553AC /* URL+User.swift in Sources */,
+				FF0B964329DA07CC006553AC /* JustVoidError.swift in Sources */,
 				FF0B961A29D9E6CC006553AC /* LoginAssemblies.swift in Sources */,
 				FF0B95DF29D9D630006553AC /* ContentView.swift in Sources */,
+				FF0B964129DA048C006553AC /* Binding+Optional.swift in Sources */,
 				FF0B963329D9FE31006553AC /* DailyAppViewModel.swift in Sources */,
 				FF0B962629D9FAAF006553AC /* User.swift in Sources */,
 				FF0B962029D9E896006553AC /* RootView.swift in Sources */,
 				FF0B961329D9E2D2006553AC /* LoginViewModel.swift in Sources */,
+				FF0B963F29DA046A006553AC /* Alert+Error.swift in Sources */,
 				FF0B962329D9E8CF006553AC /* JournalView.swift in Sources */,
 				FF0B95F229D9D8AB006553AC /* CNURLSession.swift in Sources */,
 				FF0B962E29D9FCC1006553AC /* UserAssemblies.swift in Sources */,
@@ -304,7 +365,10 @@
 				FF0B962829D9FB25006553AC /* UserCoordinator.swift in Sources */,
 				FF0B95DD29D9D630006553AC /* DailyApp.swift in Sources */,
 				FF0B961829D9E638006553AC /* Resolver+Unsafe.swift in Sources */,
+				FF0B963629DA00F3006553AC /* UserService.swift in Sources */,
+				FF0B964529DA08E8006553AC /* View+Alert.swift in Sources */,
 				FF0B95FF29D9D9B7006553AC /* CNURLSessionMock.swift in Sources */,
+				FF0B963C29DA03CF006553AC /* Publisher+Sink.swift in Sources */,
 				FF0B961029D9DE25006553AC /* LoginView.swift in Sources */,
 				FF0B960529D9DBE9006553AC /* MainAssembler.swift in Sources */,
 			);

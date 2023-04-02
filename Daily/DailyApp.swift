@@ -11,7 +11,7 @@ import SwiftUI
 struct DailyApp: App {
 
     private let mainAssembler: MainAssembler
-    private let viewModel: DailyAppViewModel
+    @ObservedObject private var viewModel: DailyAppViewModel
 
     init() {
         let mainAssembler = MainAssembler()

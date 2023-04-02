@@ -12,6 +12,7 @@ var NetworkAssemblies: [Assembly] = {
     var assemblies = [Assembly]()
 
     assemblies.append(CNURLSessionMockAssembly())
+    assemblies.append(UserServiceAssembly())
 
     return assemblies
 }()
