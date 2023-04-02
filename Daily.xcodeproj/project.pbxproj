@@ -18,6 +18,12 @@
 		FF0B960229D9DA1A006553AC /* NSError+LocalizedDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B960129D9DA1A006553AC /* NSError+LocalizedDescription.swift */; };
 		FF0B960529D9DBE9006553AC /* MainAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B960429D9DBE9006553AC /* MainAssembler.swift */; };
 		FF0B960729D9DC4F006553AC /* NetworkAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B960629D9DC4F006553AC /* NetworkAssemblies.swift */; };
+		FF0B961029D9DE25006553AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B960F29D9DE25006553AC /* LoginView.swift */; };
+		FF0B961329D9E2D2006553AC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B961229D9E2D2006553AC /* LoginViewModel.swift */; };
+		FF0B961629D9E54B006553AC /* ResolverEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B961529D9E54B006553AC /* ResolverEnvironmentKey.swift */; };
+		FF0B961829D9E638006553AC /* Resolver+Unsafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B961729D9E638006553AC /* Resolver+Unsafe.swift */; };
+		FF0B961A29D9E6CC006553AC /* LoginAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B961929D9E6CC006553AC /* LoginAssemblies.swift */; };
+		FF0B961D29D9E729006553AC /* PreviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B961C29D9E729006553AC /* PreviewHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,12 @@
 		FF0B960129D9DA1A006553AC /* NSError+LocalizedDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+LocalizedDescription.swift"; sourceTree = "<group>"; };
 		FF0B960429D9DBE9006553AC /* MainAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembler.swift; sourceTree = "<group>"; };
 		FF0B960629D9DC4F006553AC /* NetworkAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssemblies.swift; sourceTree = "<group>"; };
+		FF0B960F29D9DE25006553AC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FF0B961229D9E2D2006553AC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FF0B961529D9E54B006553AC /* ResolverEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolverEnvironmentKey.swift; sourceTree = "<group>"; };
+		FF0B961729D9E638006553AC /* Resolver+Unsafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Unsafe.swift"; sourceTree = "<group>"; };
+		FF0B961929D9E6CC006553AC /* LoginAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssemblies.swift; sourceTree = "<group>"; };
+		FF0B961C29D9E729006553AC /* PreviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +77,10 @@
 		FF0B95DB29D9D630006553AC /* Daily */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B961129D9E2B5006553AC /* Login */,
 				FF0B95F029D9D88B006553AC /* Network */,
+				FF0B961429D9E52D006553AC /* DependencyInjection */,
+				FF0B961B29D9E70D006553AC /* Utilities */,
 				FF0B960029D9DA01006553AC /* Extensions */,
 				FF0B95DC29D9D630006553AC /* DailyApp.swift */,
 				FF0B960429D9DBE9006553AC /* MainAssembler.swift */,
@@ -97,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				FF0B960129D9DA1A006553AC /* NSError+LocalizedDescription.swift */,
+				FF0B961729D9E638006553AC /* Resolver+Unsafe.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -108,6 +124,32 @@
 				FF0B95FE29D9D9B7006553AC /* CNURLSessionMock.swift */,
 			);
 			path = URLSession;
+			sourceTree = "<group>";
+		};
+		FF0B961129D9E2B5006553AC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B960F29D9DE25006553AC /* LoginView.swift */,
+				FF0B961229D9E2D2006553AC /* LoginViewModel.swift */,
+				FF0B961929D9E6CC006553AC /* LoginAssemblies.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FF0B961429D9E52D006553AC /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B961529D9E54B006553AC /* ResolverEnvironmentKey.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		FF0B961B29D9E70D006553AC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B961C29D9E729006553AC /* PreviewHelper.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,12 +230,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF0B961D29D9E729006553AC /* PreviewHelper.swift in Sources */,
 				FF0B960229D9DA1A006553AC /* NSError+LocalizedDescription.swift in Sources */,
+				FF0B961A29D9E6CC006553AC /* LoginAssemblies.swift in Sources */,
 				FF0B95DF29D9D630006553AC /* ContentView.swift in Sources */,
+				FF0B961329D9E2D2006553AC /* LoginViewModel.swift in Sources */,
 				FF0B95F229D9D8AB006553AC /* CNURLSession.swift in Sources */,
 				FF0B960729D9DC4F006553AC /* NetworkAssemblies.swift in Sources */,
+				FF0B961629D9E54B006553AC /* ResolverEnvironmentKey.swift in Sources */,
 				FF0B95DD29D9D630006553AC /* DailyApp.swift in Sources */,
+				FF0B961829D9E638006553AC /* Resolver+Unsafe.swift in Sources */,
 				FF0B95FF29D9D9B7006553AC /* CNURLSessionMock.swift in Sources */,
+				FF0B961029D9DE25006553AC /* LoginView.swift in Sources */,
 				FF0B960529D9DBE9006553AC /* MainAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

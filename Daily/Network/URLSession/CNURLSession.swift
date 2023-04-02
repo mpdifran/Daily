@@ -12,4 +12,3 @@ protocol CNURLSession: AnyObject {
 
     func dataTaskPublisher(for request: URLRequest) -> AnyPublisher<Data, Error>
 }
-

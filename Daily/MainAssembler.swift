@@ -15,6 +15,7 @@ final class MainAssembler {
     let assembler = Assembler()
 
     init() {
+        assembler.apply(assemblies: LoginAssemblies)
         assembler.apply(assemblies: NetworkAssemblies)
     }
 }
