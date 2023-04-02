@@ -24,6 +24,8 @@
 		FF0B961829D9E638006553AC /* Resolver+Unsafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B961729D9E638006553AC /* Resolver+Unsafe.swift */; };
 		FF0B961A29D9E6CC006553AC /* LoginAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B961929D9E6CC006553AC /* LoginAssemblies.swift */; };
 		FF0B961D29D9E729006553AC /* PreviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B961C29D9E729006553AC /* PreviewHelper.swift */; };
+		FF0B962029D9E896006553AC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B961F29D9E896006553AC /* RootView.swift */; };
+		FF0B962329D9E8CF006553AC /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B962229D9E8CF006553AC /* JournalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		FF0B961729D9E638006553AC /* Resolver+Unsafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Unsafe.swift"; sourceTree = "<group>"; };
 		FF0B961929D9E6CC006553AC /* LoginAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssemblies.swift; sourceTree = "<group>"; };
 		FF0B961C29D9E729006553AC /* PreviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelper.swift; sourceTree = "<group>"; };
+		FF0B961F29D9E896006553AC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		FF0B962229D9E8CF006553AC /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		FF0B95DB29D9D630006553AC /* Daily */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B961E29D9E888006553AC /* Root */,
+				FF0B962129D9E8C4006553AC /* Journal */,
 				FF0B961129D9E2B5006553AC /* Login */,
 				FF0B95F029D9D88B006553AC /* Network */,
 				FF0B961429D9E52D006553AC /* DependencyInjection */,
@@ -150,6 +156,22 @@
 				FF0B961C29D9E729006553AC /* PreviewHelper.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FF0B961E29D9E888006553AC /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B961F29D9E896006553AC /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		FF0B962129D9E8C4006553AC /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B962229D9E8CF006553AC /* JournalView.swift */,
+			);
+			path = Journal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +256,9 @@
 				FF0B960229D9DA1A006553AC /* NSError+LocalizedDescription.swift in Sources */,
 				FF0B961A29D9E6CC006553AC /* LoginAssemblies.swift in Sources */,
 				FF0B95DF29D9D630006553AC /* ContentView.swift in Sources */,
+				FF0B962029D9E896006553AC /* RootView.swift in Sources */,
 				FF0B961329D9E2D2006553AC /* LoginViewModel.swift in Sources */,
+				FF0B962329D9E8CF006553AC /* JournalView.swift in Sources */,
 				FF0B95F229D9D8AB006553AC /* CNURLSession.swift in Sources */,
 				FF0B960729D9DC4F006553AC /* NetworkAssemblies.swift in Sources */,
 				FF0B961629D9E54B006553AC /* ResolverEnvironmentKey.swift in Sources */,

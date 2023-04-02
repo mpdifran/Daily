@@ -14,7 +14,7 @@ struct DailyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LoginView(resolver: mainAssembler.resolver)
+            RootView(resolver: mainAssembler.resolver)
                 .environment(\.resolver, mainAssembler.resolver)
         }
     }
