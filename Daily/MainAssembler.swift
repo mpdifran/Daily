@@ -15,6 +15,8 @@ final class MainAssembler {
     let assembler = Assembler()
 
     init() {
+        assembler.apply(assemblies: JournalAssemblies)
+        assembler.apply(assemblies: DailyGoalsAssemblies)
         assembler.apply(assemblies: LoginAssemblies)
         assembler.apply(assemblies: UserAssemblies)
         assembler.apply(assemblies: NetworkAssemblies)

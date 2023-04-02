@@ -17,8 +17,6 @@ struct LoginView: View {
         self.viewModel = resolver.unsafeResolve(LoginViewModel.self)
     }
 
-    @Environment(\.resolver) var resolver: Resolver
-
     @State private var error: Error?
     @State private var email = ""
     @State private var password = ""
