@@ -13,6 +13,11 @@
 		FF0B95E429D9D631006553AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0B95E329D9D631006553AC /* Preview Assets.xcassets */; };
 		FF0B95EC29D9D81A006553AC /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = FF0B95EB29D9D81A006553AC /* Swinject */; };
 		FF0B95EF29D9D83A006553AC /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = FF0B95EE29D9D83A006553AC /* SwinjectAutoregistration */; };
+		FF0B95F229D9D8AB006553AC /* CNURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B95F129D9D8AB006553AC /* CNURLSession.swift */; };
+		FF0B95FF29D9D9B7006553AC /* CNURLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B95FE29D9D9B7006553AC /* CNURLSessionMock.swift */; };
+		FF0B960229D9DA1A006553AC /* NSError+LocalizedDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B960129D9DA1A006553AC /* NSError+LocalizedDescription.swift */; };
+		FF0B960529D9DBE9006553AC /* MainAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B960429D9DBE9006553AC /* MainAssembler.swift */; };
+		FF0B960729D9DC4F006553AC /* NetworkAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B960629D9DC4F006553AC /* NetworkAssemblies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +26,11 @@
 		FF0B95DE29D9D630006553AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF0B95E029D9D631006553AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF0B95E329D9D631006553AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF0B95F129D9D8AB006553AC /* CNURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNURLSession.swift; sourceTree = "<group>"; };
+		FF0B95FE29D9D9B7006553AC /* CNURLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNURLSessionMock.swift; sourceTree = "<group>"; };
+		FF0B960129D9DA1A006553AC /* NSError+LocalizedDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+LocalizedDescription.swift"; sourceTree = "<group>"; };
+		FF0B960429D9DBE9006553AC /* MainAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembler.swift; sourceTree = "<group>"; };
+		FF0B960629D9DC4F006553AC /* NetworkAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssemblies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +65,10 @@
 		FF0B95DB29D9D630006553AC /* Daily */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B95F029D9D88B006553AC /* Network */,
+				FF0B960029D9DA01006553AC /* Extensions */,
 				FF0B95DC29D9D630006553AC /* DailyApp.swift */,
+				FF0B960429D9DBE9006553AC /* MainAssembler.swift */,
 				FF0B95DE29D9D630006553AC /* ContentView.swift */,
 				FF0B95E029D9D631006553AC /* Assets.xcassets */,
 				FF0B95E229D9D631006553AC /* Preview Content */,
@@ -69,6 +82,32 @@
 				FF0B95E329D9D631006553AC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF0B95F029D9D88B006553AC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B960829D9DCB1006553AC /* URLSession */,
+				FF0B960629D9DC4F006553AC /* NetworkAssemblies.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FF0B960029D9DA01006553AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B960129D9DA1A006553AC /* NSError+LocalizedDescription.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF0B960829D9DCB1006553AC /* URLSession */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B95F129D9D8AB006553AC /* CNURLSession.swift */,
+				FF0B95FE29D9D9B7006553AC /* CNURLSessionMock.swift */,
+			);
+			path = URLSession;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF0B960229D9DA1A006553AC /* NSError+LocalizedDescription.swift in Sources */,
 				FF0B95DF29D9D630006553AC /* ContentView.swift in Sources */,
+				FF0B95F229D9D8AB006553AC /* CNURLSession.swift in Sources */,
+				FF0B960729D9DC4F006553AC /* NetworkAssemblies.swift in Sources */,
 				FF0B95DD29D9D630006553AC /* DailyApp.swift in Sources */,
+				FF0B95FF29D9D9B7006553AC /* CNURLSessionMock.swift in Sources */,
+				FF0B960529D9DBE9006553AC /* MainAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
