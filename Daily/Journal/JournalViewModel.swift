@@ -12,6 +12,7 @@ import SwinjectAutoregistration
 
 final class JournalViewModel: ObservableObject {
     @Published var goals = [DailyGoal]()
+    @Published var isLoadingGoals = false
 
     private var subscriptions = Set<AnyCancellable>()
 
@@ -38,6 +39,13 @@ private extension JournalViewModel {
             .goals
             .sink { [weak self] (goals) in
                 self?.goals = goals
+            }
+            .store(in: &subscriptions)
+
+        dailyGoalCoordinator
+            .isLoadingGoals
+            .sink { [weak self] (isLoadingGoals) in
+                self?.isLoadingGoals = isLoadingGoals
             }
             .store(in: &subscriptions)
     }

@@ -18,4 +18,11 @@ struct DailyGoal: Codable, Identifiable, Equatable {
         self.title = title
         self.createdAt = Date()
     }
+
+    /// Initializer to be used by the mock backend to help create tasks with dates in the past.
+    init(title: String, createdAt: Date) {
+        self.id = UUID()
+        self.title = title
+        self.createdAt = createdAt
+    }
 }

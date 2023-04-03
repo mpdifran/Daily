@@ -18,14 +18,7 @@ struct JournalView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVStack {
-                    ForEach(viewModel.goals) { (goal) in
-                        DailyGoalCell(dailyGoal: goal)
-                            .padding()
-                    }
-                }
-            }
+            contentView
             .animation(.default, value: viewModel.goals)
             .navigationTitle("Journal")
             .toolbar {
@@ -41,6 +34,44 @@ struct JournalView: View {
         }
         .tabItem {
             Label("Journal", systemImage: "text.book.closed")
+        }
+    }
+}
+
+private extension JournalView {
+
+    @ViewBuilder
+    var contentView: some View {
+        if viewModel.isLoadingGoals {
+            loadingContentView
+        } else if viewModel.goals.isEmpty {
+            emptyContentView
+        } else {
+            loadedContentView
+        }
+    }
+
+    var loadingContentView: some View {
+        ProgressView()
+    }
+
+    var emptyContentView: some View {
+        Group {
+            Text("No Goals Yet")
+            Text("Create one now!")
+                .font(.caption)
+        }
+        .foregroundColor(.secondary)
+    }
+
+    var loadedContentView: some View {
+        ScrollView {
+            LazyVStack {
+                ForEach(viewModel.goals) { (goal) in
+                    DailyGoalCell(dailyGoal: goal)
+                        .padding()
+                }
+            }
         }
     }
 }

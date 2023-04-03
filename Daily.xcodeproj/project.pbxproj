@@ -48,6 +48,9 @@
 		FF0B965929DA126E006553AC /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965829DA126E006553AC /* AccountViewModel.swift */; };
 		FF0B965B29DA140C006553AC /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965A29DA140C006553AC /* AccountCell.swift */; };
 		FF0B965D29DA1506006553AC /* AccountAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965C29DA1506006553AC /* AccountAssemblies.swift */; };
+		FF0B965F29DB06CA006553AC /* GoalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965E29DB06CA006553AC /* GoalService.swift */; };
+		FF0B966129DB0737006553AC /* URL+Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966029DB0737006553AC /* URL+Goals.swift */; };
+		FF0B966329DB0785006553AC /* URL+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966229DB0785006553AC /* URL+Base.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +94,9 @@
 		FF0B965829DA126E006553AC /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		FF0B965A29DA140C006553AC /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		FF0B965C29DA1506006553AC /* AccountAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssemblies.swift; sourceTree = "<group>"; };
+		FF0B965E29DB06CA006553AC /* GoalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalService.swift; sourceTree = "<group>"; };
+		FF0B966029DB0737006553AC /* URL+Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Goals.swift"; sourceTree = "<group>"; };
+		FF0B966229DB0785006553AC /* URL+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Base.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				FF0B963529DA00F3006553AC /* UserService.swift */,
+				FF0B965E29DB06CA006553AC /* GoalService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -266,7 +273,9 @@
 		FF0B963729DA0175006553AC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B966229DB0785006553AC /* URL+Base.swift */,
 				FF0B963829DA0181006553AC /* URL+User.swift */,
+				FF0B966029DB0737006553AC /* URL+Goals.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,6 +407,7 @@
 				FF0B965729DA1216006553AC /* AccountView.swift in Sources */,
 				FF0B961A29D9E6CC006553AC /* LoginAssemblies.swift in Sources */,
 				FF0B95DF29D9D630006553AC /* ContentView.swift in Sources */,
+				FF0B965F29DB06CA006553AC /* GoalService.swift in Sources */,
 				FF0B964129DA048C006553AC /* Binding+Optional.swift in Sources */,
 				FF0B963329D9FE31006553AC /* DailyAppViewModel.swift in Sources */,
 				FF0B962629D9FAAF006553AC /* User.swift in Sources */,
@@ -413,6 +423,7 @@
 				FF0B964A29DA0AD0006553AC /* DailyGoal.swift in Sources */,
 				FF0B965929DA126E006553AC /* AccountViewModel.swift in Sources */,
 				FF0B960729D9DC4F006553AC /* NetworkAssemblies.swift in Sources */,
+				FF0B966129DB0737006553AC /* URL+Goals.swift in Sources */,
 				FF0B961629D9E54B006553AC /* ResolverEnvironmentKey.swift in Sources */,
 				FF0B965229DA0EB0006553AC /* JournalAssemblies.swift in Sources */,
 				FF0B962829D9FB25006553AC /* UserCoordinator.swift in Sources */,
@@ -422,6 +433,7 @@
 				FF0B964C29DA0B0D006553AC /* DailyGoalCoordinator.swift in Sources */,
 				FF0B963629DA00F3006553AC /* UserService.swift in Sources */,
 				FF0B965429DA0FBC006553AC /* DailyGoalCell.swift in Sources */,
+				FF0B966329DB0785006553AC /* URL+Base.swift in Sources */,
 				FF0B964529DA08E8006553AC /* View+Alert.swift in Sources */,
 				FF0B95FF29D9D9B7006553AC /* CNURLSessionMock.swift in Sources */,
 				FF0B963C29DA03CF006553AC /* Publisher+Sink.swift in Sources */,

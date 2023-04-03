@@ -9,13 +9,13 @@ import Foundation
 
 extension URL {
     static func login(email: String, password: String) -> URL {
-        var url = URL(string: "https://creatornow.com/login")
+        var url = URL.base.appendingPathComponent("login")
 
-        url?.append(queryItems: [
+        url.append(queryItems: [
             URLQueryItem(name: "email", value: email),
             URLQueryItem(name: "password", value: password)
         ])
 
-        return url!
+        return url
     }
 }

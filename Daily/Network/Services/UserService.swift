@@ -10,7 +10,7 @@ import Combine
 import Swinject
 import SwinjectAutoregistration
 
-protocol UserService {
+protocol UserService: AnyObject {
     func login(withEmail email: String, password: String) -> AnyPublisher<User, Error>
 }
 

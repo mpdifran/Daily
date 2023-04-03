@@ -17,9 +17,14 @@ final class DailyAppViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
 
     private let userCoordinator: UserCoordinator
+    private let dailyGoalCoordinator: DailyGoalCoordinator
 
-    init(userCoordinator: UserCoordinator) {
+    init(
+        userCoordinator: UserCoordinator,
+        dailyGoalCoordinator: DailyGoalCoordinator
+    ) {
         self.userCoordinator = userCoordinator
+        self.dailyGoalCoordinator = dailyGoalCoordinator
 
         setupSubscriptions()
     }
