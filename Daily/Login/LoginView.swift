@@ -51,22 +51,11 @@ struct LoginView: View {
                 .autocorrectionDisabled(true)
             }
 
-            Button {
+            LoadingButton(title: "Log In", isLoading: isLoggingIn) {
                 guard !isLoggingIn else { return }
 
                 login()
-            } label: {
-                Group {
-                    if isLoggingIn {
-                        ProgressView()
-                    } else {
-                        Text("Log In")
-                    }
-                }
-                .frame(maxWidth: .infinity)
-                .frame(height: 40)
             }
-            .buttonStyle(.borderedProminent)
             .padding()
         }
         .background(ignoresSafeAreaEdges: .all)

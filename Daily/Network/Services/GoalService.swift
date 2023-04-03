@@ -13,6 +13,7 @@ import SwinjectAutoregistration
 protocol GoalService: AnyObject {
 
     func getGoals() -> AnyPublisher<[DailyGoal], Error>
+    func createGoal(title: String) -> AnyPublisher<DailyGoal, Error>
 }
 
 final class GoalServiceImpl {
@@ -34,6 +35,15 @@ extension GoalServiceImpl: GoalService {
         return urlSession
             .dataTaskPublisher(for: urlRequest)
             .decode(type: [DailyGoal].self, decoder: decoder)
+            .eraseToAnyPublisher()
+    }
+
+    func createGoal(title: String) -> AnyPublisher<DailyGoal, Error> {
+        let urlRequest = URLRequest(url: .createGoal(title: title))
+
+        return urlSession
+            .dataTaskPublisher(for: urlRequest)
+            .decode(type: DailyGoal.self, decoder: decoder)
             .eraseToAnyPublisher()
     }
 }

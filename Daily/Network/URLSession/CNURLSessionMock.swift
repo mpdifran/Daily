@@ -34,6 +34,8 @@ extension CNURLSessionMock: CNURLSession {
             return mockPublisherForLogin(urlRequest: request)
         case "/goals":
             return mockPublisherForGoals()
+        case "/goals/create":
+            return mockPublisherForCreateGoal(urlRequest: request)
         default:
             break
         }
@@ -79,6 +81,32 @@ private extension CNURLSessionMock {
     func mockPublisherForGoals() -> AnyPublisher<Data, Error> {
         do {
             let data = try encoder.encode(cachedGoals)
+
+            return Just(data)
+                .setFailureType(to: Error.self)
+                .receive(on: queue)
+                .delay(for: 1, scheduler: RunLoop.main)
+                .eraseToAnyPublisher()
+        } catch {
+            let error = NSError("5xx Server Error")
+            return Fail(error: error).eraseToAnyPublisher()
+        }
+    }
+
+    func mockPublisherForCreateGoal(urlRequest: URLRequest) -> AnyPublisher<Data, Error> {
+        let urlComponents = URLComponents(url: urlRequest.url!, resolvingAgainstBaseURL: false)
+        let queryItems = urlComponents?.queryItems ?? []
+
+        guard let title = queryItems.first(where: { $0.name == "title" })?.value else {
+            let error = NSError("Invalid request.")
+            return Fail(error: error).eraseToAnyPublisher()
+        }
+
+        do {
+            let goal = DailyGoal(title: title)
+            let data = try encoder.encode(goal)
+
+            cachedGoals.insert(goal, at: 0)
 
             return Just(data)
                 .setFailureType(to: Error.self)

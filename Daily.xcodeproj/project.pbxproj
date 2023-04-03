@@ -51,6 +51,9 @@
 		FF0B965F29DB06CA006553AC /* GoalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B965E29DB06CA006553AC /* GoalService.swift */; };
 		FF0B966129DB0737006553AC /* URL+Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966029DB0737006553AC /* URL+Goals.swift */; };
 		FF0B966329DB0785006553AC /* URL+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966229DB0785006553AC /* URL+Base.swift */; };
+		FF0B966629DB9244006553AC /* CreateGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966529DB9244006553AC /* CreateGoalView.swift */; };
+		FF0B966829DB9289006553AC /* CreateGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966729DB9289006553AC /* CreateGoalViewModel.swift */; };
+		FF0B966B29DB96A0006553AC /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966A29DB96A0006553AC /* LoadingButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +100,9 @@
 		FF0B965E29DB06CA006553AC /* GoalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalService.swift; sourceTree = "<group>"; };
 		FF0B966029DB0737006553AC /* URL+Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Goals.swift"; sourceTree = "<group>"; };
 		FF0B966229DB0785006553AC /* URL+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Base.swift"; sourceTree = "<group>"; };
+		FF0B966529DB9244006553AC /* CreateGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalView.swift; sourceTree = "<group>"; };
+		FF0B966729DB9289006553AC /* CreateGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewModel.swift; sourceTree = "<group>"; };
+		FF0B966A29DB96A0006553AC /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 				FF0B965529DA1206006553AC /* Account */,
 				FF0B961129D9E2B5006553AC /* Login */,
 				FF0B962429D9FA9E006553AC /* User */,
+				FF0B966929DB968F006553AC /* UIComponents */,
 				FF0B95F029D9D88B006553AC /* Network */,
 				FF0B961429D9E52D006553AC /* DependencyInjection */,
 				FF0B961B29D9E70D006553AC /* Utilities */,
@@ -227,6 +234,7 @@
 		FF0B962129D9E8C4006553AC /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B966429DB9236006553AC /* CreateGoal */,
 				FF0B962229D9E8CF006553AC /* JournalView.swift */,
 				FF0B965329DA0FBC006553AC /* DailyGoalCell.swift */,
 				FF0B964D29DA0B44006553AC /* JournalViewModel.swift */,
@@ -321,6 +329,23 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
+		FF0B966429DB9236006553AC /* CreateGoal */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B966529DB9244006553AC /* CreateGoalView.swift */,
+				FF0B966729DB9289006553AC /* CreateGoalViewModel.swift */,
+			);
+			path = CreateGoal;
+			sourceTree = "<group>";
+		};
+		FF0B966929DB968F006553AC /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B966A29DB96A0006553AC /* LoadingButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -412,6 +437,7 @@
 				FF0B963329D9FE31006553AC /* DailyAppViewModel.swift in Sources */,
 				FF0B962629D9FAAF006553AC /* User.swift in Sources */,
 				FF0B965D29DA1506006553AC /* AccountAssemblies.swift in Sources */,
+				FF0B966829DB9289006553AC /* CreateGoalViewModel.swift in Sources */,
 				FF0B962029D9E896006553AC /* RootView.swift in Sources */,
 				FF0B961329D9E2D2006553AC /* LoginViewModel.swift in Sources */,
 				FF0B964E29DA0B44006553AC /* JournalViewModel.swift in Sources */,
@@ -420,6 +446,7 @@
 				FF0B965029DA0C8C006553AC /* DailyGoalsAssemblies.swift in Sources */,
 				FF0B95F229D9D8AB006553AC /* CNURLSession.swift in Sources */,
 				FF0B962E29D9FCC1006553AC /* UserAssemblies.swift in Sources */,
+				FF0B966B29DB96A0006553AC /* LoadingButton.swift in Sources */,
 				FF0B964A29DA0AD0006553AC /* DailyGoal.swift in Sources */,
 				FF0B965929DA126E006553AC /* AccountViewModel.swift in Sources */,
 				FF0B960729D9DC4F006553AC /* NetworkAssemblies.swift in Sources */,
@@ -435,6 +462,7 @@
 				FF0B965429DA0FBC006553AC /* DailyGoalCell.swift in Sources */,
 				FF0B966329DB0785006553AC /* URL+Base.swift in Sources */,
 				FF0B964529DA08E8006553AC /* View+Alert.swift in Sources */,
+				FF0B966629DB9244006553AC /* CreateGoalView.swift in Sources */,
 				FF0B95FF29D9D9B7006553AC /* CNURLSessionMock.swift in Sources */,
 				FF0B963C29DA03CF006553AC /* Publisher+Sink.swift in Sources */,
 				FF0B961029D9DE25006553AC /* LoginView.swift in Sources */,

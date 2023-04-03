@@ -12,6 +12,7 @@ var JournalAssemblies: [Assembly] = {
     var assemblies = [Assembly]()
 
     assemblies.append(JournalViewModelAssembly())
+    assemblies.append(CreateGoalViewModelAssembly())
 
     return assemblies
 }()

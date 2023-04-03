@@ -16,6 +16,10 @@ struct JournalView: View {
         self.viewModel = resolver.unsafeResolve(JournalViewModel.self)
     }
 
+    @State private var showCreateGoalView = false
+
+    @Environment(\.resolver) private var resolver
+
     var body: some View {
         NavigationView {
             contentView
@@ -24,8 +28,7 @@ struct JournalView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
-                        // Create fake goals for now.
-                        viewModel.createGoal(title: "Test \(viewModel.goals.count)")
+                        showCreateGoalView.toggle()
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -34,6 +37,9 @@ struct JournalView: View {
         }
         .tabItem {
             Label("Journal", systemImage: "text.book.closed")
+        }
+        .sheet(isPresented: $showCreateGoalView) {
+            CreateGoalView(resolver: resolver)
         }
     }
 }
