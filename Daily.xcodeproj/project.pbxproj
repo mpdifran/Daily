@@ -54,6 +54,8 @@
 		FF0B966629DB9244006553AC /* CreateGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966529DB9244006553AC /* CreateGoalView.swift */; };
 		FF0B966829DB9289006553AC /* CreateGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966729DB9289006553AC /* CreateGoalViewModel.swift */; };
 		FF0B966B29DB96A0006553AC /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966A29DB96A0006553AC /* LoadingButton.swift */; };
+		FF0B966D29DB9C87006553AC /* Array+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966C29DB9C87006553AC /* Array+Replace.swift */; };
+		FF0B966F29DB9D7E006553AC /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966E29DB9D7E006553AC /* Checkbox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +105,8 @@
 		FF0B966529DB9244006553AC /* CreateGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalView.swift; sourceTree = "<group>"; };
 		FF0B966729DB9289006553AC /* CreateGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewModel.swift; sourceTree = "<group>"; };
 		FF0B966A29DB96A0006553AC /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		FF0B966C29DB9C87006553AC /* Array+Replace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Replace.swift"; sourceTree = "<group>"; };
+		FF0B966E29DB9D7E006553AC /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				FF0B960129D9DA1A006553AC /* NSError+LocalizedDescription.swift */,
+				FF0B966C29DB9C87006553AC /* Array+Replace.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				FF0B966A29DB96A0006553AC /* LoadingButton.swift */,
+				FF0B966E29DB9D7E006553AC /* Checkbox.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 				FF0B962829D9FB25006553AC /* UserCoordinator.swift in Sources */,
 				FF0B95DD29D9D630006553AC /* DailyApp.swift in Sources */,
 				FF0B965B29DA140C006553AC /* AccountCell.swift in Sources */,
+				FF0B966D29DB9C87006553AC /* Array+Replace.swift in Sources */,
 				FF0B961829D9E638006553AC /* Resolver+Unsafe.swift in Sources */,
 				FF0B964C29DA0B0D006553AC /* DailyGoalCoordinator.swift in Sources */,
 				FF0B963629DA00F3006553AC /* UserService.swift in Sources */,
@@ -463,6 +470,7 @@
 				FF0B966329DB0785006553AC /* URL+Base.swift in Sources */,
 				FF0B964529DA08E8006553AC /* View+Alert.swift in Sources */,
 				FF0B966629DB9244006553AC /* CreateGoalView.swift in Sources */,
+				FF0B966F29DB9D7E006553AC /* Checkbox.swift in Sources */,
 				FF0B95FF29D9D9B7006553AC /* CNURLSessionMock.swift in Sources */,
 				FF0B963C29DA03CF006553AC /* Publisher+Sink.swift in Sources */,
 				FF0B961029D9DE25006553AC /* LoginView.swift in Sources */,

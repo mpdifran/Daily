@@ -36,6 +36,8 @@ extension CNURLSessionMock: CNURLSession {
             return mockPublisherForGoals()
         case "/goals/create":
             return mockPublisherForCreateGoal(urlRequest: request)
+        case "/goals/complete":
+            return mockPublisherForCompletingGoals(urlRequest: request)
         default:
             break
         }
@@ -118,6 +120,40 @@ private extension CNURLSessionMock {
             return Fail(error: error).eraseToAnyPublisher()
         }
     }
+
+    func mockPublisherForCompletingGoals(urlRequest: URLRequest) -> AnyPublisher<Data, Error> {
+        let urlComponents = URLComponents(url: urlRequest.url!, resolvingAgainstBaseURL: false)
+        let queryItems = urlComponents?.queryItems ?? []
+
+        guard let idString = queryItems.first(where: { $0.name == "id" })?.value,
+              let id = UUID(uuidString: idString),
+              let goal = cachedGoals.first(where: { $0.id ==  id}) else {
+            let error = NSError("Goal does not exist.")
+            return Fail(error: error).eraseToAnyPublisher()
+        }
+
+        let completedGoal = goal.complete()
+
+        do {
+            let data = try encoder.encode(completedGoal)
+
+            let success = cachedGoals.replace(goal)
+
+            guard success else {
+                let error = NSError("Goal does not exist.")
+                return Fail(error: error).eraseToAnyPublisher()
+            }
+
+            return Just(data)
+                .setFailureType(to: Error.self)
+                .receive(on: queue)
+                .delay(for: 1, scheduler: RunLoop.main)
+                .eraseToAnyPublisher()
+        } catch {
+            let error = NSError("5xx Server Error")
+            return Fail(error: error).eraseToAnyPublisher()
+        }
+    }
 }
 
 private extension CNURLSessionMock {
@@ -127,8 +163,18 @@ private extension CNURLSessionMock {
         let yesterday = Calendar.current.date(byAdding: .init(day: -1), to: today)!
         let dayBeforeYesterday = Calendar.current.date(byAdding: .init(day: -2), to: today)!
 
-        let firstTask = DailyGoal(title: "Post a YouTube Short", createdAt: yesterday)
-        let secondTask = DailyGoal(title: "Engage with audience", createdAt: dayBeforeYesterday)
+        let firstTask = DailyGoal(
+            id: UUID(),
+            title: "Post a YouTube Short",
+            isComplete: false,
+            createdAt: yesterday
+        )
+        let secondTask = DailyGoal(
+            id: UUID(),
+            title: "Engage with audience",
+            isComplete: true,
+            createdAt: dayBeforeYesterday
+        )
 
         let defaultGoals = [firstTask, secondTask]
 

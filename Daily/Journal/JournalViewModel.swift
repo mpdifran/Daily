@@ -25,6 +25,14 @@ final class JournalViewModel: ObservableObject {
     }
 }
 
+extension JournalViewModel {
+
+    func completeGoal(goal: DailyGoal) {
+        dailyGoalCoordinator
+            .completeGoal(goal: goal)
+    }
+}
+
 private extension JournalViewModel {
 
     func setupSubscriptions() {

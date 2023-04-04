@@ -20,4 +20,12 @@ extension URL {
 
         return url
     }
+
+    static func completeGoal(id: UUID) -> URL {
+        var url = URL.base.appendingPathComponent("goals/complete")
+
+        url.append(queryItems: [.init(name: "id", value: id.uuidString)])
+
+        return url
+    }
 }

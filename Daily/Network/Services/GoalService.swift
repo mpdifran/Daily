@@ -14,6 +14,7 @@ protocol GoalService: AnyObject {
 
     func getGoals() -> AnyPublisher<[DailyGoal], Error>
     func createGoal(title: String) -> AnyPublisher<DailyGoal, Error>
+    func completeGoal(id: UUID) -> AnyPublisher<DailyGoal, Error>
 }
 
 final class GoalServiceImpl {
@@ -40,6 +41,15 @@ extension GoalServiceImpl: GoalService {
 
     func createGoal(title: String) -> AnyPublisher<DailyGoal, Error> {
         let urlRequest = URLRequest(url: .createGoal(title: title))
+
+        return urlSession
+            .dataTaskPublisher(for: urlRequest)
+            .decode(type: DailyGoal.self, decoder: decoder)
+            .eraseToAnyPublisher()
+    }
+
+    func completeGoal(id: UUID) -> AnyPublisher<DailyGoal, Error> {
+        let urlRequest = URLRequest(url: .completeGoal(id: id))
 
         return urlSession
             .dataTaskPublisher(for: urlRequest)

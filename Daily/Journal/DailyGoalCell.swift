@@ -9,9 +9,13 @@ import SwiftUI
 
 struct DailyGoalCell: View {
     private let dailyGoal: DailyGoal
+    private let onComplete: () -> Void
 
-    init(dailyGoal: DailyGoal) {
+    init(dailyGoal: DailyGoal, onComplete: @escaping () -> Void) {
         self.dailyGoal = dailyGoal
+        self.onComplete = onComplete
+
+        feedbackGenerator.prepare()
     }
 
     private static let dateFormatter: DateFormatter = {
@@ -21,6 +25,8 @@ struct DailyGoalCell: View {
         formatter.doesRelativeDateFormatting = true
         return formatter
     }()
+
+    private let feedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
 
     var body: some View {
         HStack {
@@ -34,6 +40,19 @@ struct DailyGoalCell: View {
             }
 
             Spacer(minLength: 0)
+
+            if dailyGoal.isComplete {
+                Checkbox(isChecked: true)
+                    .padding()
+            } else {
+                Button {
+                    feedbackGenerator.impactOccurred()
+                    onComplete()
+                } label: {
+                    Checkbox(isChecked: false)
+                        .padding()
+                }
+            }
         }
         .padding()
         .clipShape(clipShape)
@@ -57,7 +76,9 @@ private extension DailyGoalCell {
 struct DailyGoalCell_Previews: PreviewProvider {
     static var previews: some View {
         PreviewHelper { (_) in
-            DailyGoalCell(dailyGoal: previewDailyGoal)
+            DailyGoalCell(dailyGoal: previewDailyGoal) {
+
+            }
         }
     }
 }

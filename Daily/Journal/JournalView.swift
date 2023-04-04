@@ -74,8 +74,10 @@ private extension JournalView {
         ScrollView {
             LazyVStack {
                 ForEach(viewModel.goals) { (goal) in
-                    DailyGoalCell(dailyGoal: goal)
-                        .padding()
+                    DailyGoalCell(dailyGoal: goal) {
+                        viewModel.completeGoal(goal: goal)
+                    }
+                    .padding()
                 }
             }
         }

@@ -15,6 +15,7 @@ protocol DailyGoalCoordinator: AnyObject {
     var isLoadingGoals: AnyPublisher<Bool, Never> { get }
 
     func createGoal(title: String) -> AnyPublisher<Void, Error>
+    func completeGoal(goal: DailyGoal)
 }
 
 final class DailyGoalCoordinatorImpl {
@@ -61,6 +62,19 @@ extension DailyGoalCoordinatorImpl: DailyGoalCoordinator {
                 return
             }
             .eraseToAnyPublisher()
+    }
+
+    func completeGoal(goal: DailyGoal) {
+        let completedGoal = goal.complete()
+
+        var existingGoals = goalsSubject.value
+        existingGoals.replace(completedGoal)
+        goalsSubject.send(existingGoals)
+
+        goalService
+            .completeGoal(id: goal.id)
+            .receiveOnMain()
+            .sinkAndStore(in: &subscriptions) // Could handle errors here
     }
 }
 
