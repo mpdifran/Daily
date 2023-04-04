@@ -98,6 +98,9 @@ extension String {
 final class NotificationCoordinatorAssembly: Assembly {
 
     func assemble(container: Container) {
-        container.autoregister(NotificationCoordinator.self, initializer: NotificationCoordinatorImpl.init)
+        container.autoregister(
+            NotificationCoordinator.self,
+            initializer: NotificationCoordinatorImpl.init
+        ).inObjectScope(.container)
     }
 }

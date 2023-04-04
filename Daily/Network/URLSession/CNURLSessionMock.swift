@@ -137,7 +137,7 @@ private extension CNURLSessionMock {
         do {
             let data = try encoder.encode(completedGoal)
 
-            let success = cachedGoals.replace(goal)
+            let success = cachedGoals.replace(completedGoal)
 
             guard success else {
                 let error = NSError("Goal does not exist.")
@@ -206,6 +206,6 @@ final class CNURLSessionMockAssembly: Assembly {
         container.autoregister(
             CNURLSession.self,
             initializer: CNURLSessionMock.init
-        ).inObjectScope(.weak)
+        ).inObjectScope(.container)
     }
 }
