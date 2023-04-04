@@ -122,6 +122,7 @@
 		FF0B967C29DBA6B7006553AC /* NotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCoordinator.swift; sourceTree = "<group>"; };
 		FF0B967E29DBA7D2006553AC /* NotificationAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAssemblies.swift; sourceTree = "<group>"; };
 		FF0B968029DBA927006553AC /* Daily.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Daily.entitlements; sourceTree = "<group>"; };
+		FF0B968129DCD510006553AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +141,7 @@
 		FF0B95D029D9D630006553AC = {
 			isa = PBXGroup;
 			children = (
+				FF0B968129DCD510006553AC /* README.md */,
 				FF0B95DB29D9D630006553AC /* Daily */,
 				FF0B95DA29D9D630006553AC /* Products */,
 			);
