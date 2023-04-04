@@ -84,6 +84,7 @@ private extension DailyGoalCoordinatorImpl {
     func setupSubscriptions() {
         userCoordinator
             .user
+            .delay(for: 0.01, scheduler: RunLoop.main) // Add a small delay so we don't access subscriptions simultaneously
             .map { [weak self] (user) in
                 if user != nil {
                     self?.fetchGoals()
