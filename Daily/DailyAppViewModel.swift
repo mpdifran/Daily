@@ -18,13 +18,16 @@ final class DailyAppViewModel: ObservableObject {
 
     private let userCoordinator: UserCoordinator
     private let dailyGoalCoordinator: DailyGoalCoordinator
+    private let notificationCoordinator: NotificationCoordinator
 
     init(
         userCoordinator: UserCoordinator,
-        dailyGoalCoordinator: DailyGoalCoordinator
+        dailyGoalCoordinator: DailyGoalCoordinator,
+        notificationCoordinator: NotificationCoordinator
     ) {
         self.userCoordinator = userCoordinator
         self.dailyGoalCoordinator = dailyGoalCoordinator
+        self.notificationCoordinator = notificationCoordinator
 
         setupSubscriptions()
     }
@@ -38,6 +41,9 @@ private extension DailyAppViewModel {
             .map { $0 != nil }
             .sink { [weak self] (isAuthenticated) in
                 self?.isAuthenticated = isAuthenticated
+                if !isAuthenticated {
+                    self?.notificationCoordinator.clearNotifications()
+                }
             }
             .store(in: &subscriptions)
     }

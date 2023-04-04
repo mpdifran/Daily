@@ -13,11 +13,14 @@ struct DailyApp: App {
     private let mainAssembler: MainAssembler
     @ObservedObject private var viewModel: DailyAppViewModel
 
+    private let notificationCoordinator: NotificationCoordinator
+
     init() {
         let mainAssembler = MainAssembler()
 
         self.mainAssembler = mainAssembler
         self.viewModel = mainAssembler.resolver.unsafeResolve(DailyAppViewModel.self)
+        self.notificationCoordinator = mainAssembler.resolver.unsafeResolve(NotificationCoordinator.self)
     }
 
     var body: some Scene {
@@ -32,6 +35,10 @@ struct DailyApp: App {
                 }
             }
             .environment(\.resolver, mainAssembler.resolver)
+            .onAppear {
+                notificationCoordinator.requestAuthorization()
+                notificationCoordinator.clearDeliveredNotifications()
+            }
         }
     }
 }

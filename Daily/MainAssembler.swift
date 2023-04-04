@@ -17,6 +17,7 @@ final class MainAssembler {
     init() {
         assembler.apply(assemblies: JournalAssemblies)
         assembler.apply(assemblies: DailyGoalsAssemblies)
+        assembler.apply(assemblies: NotificationAssemblies)
         assembler.apply(assemblies: AccountAssemblies)
         assembler.apply(assemblies: LoginAssemblies)
         assembler.apply(assemblies: UserAssemblies)

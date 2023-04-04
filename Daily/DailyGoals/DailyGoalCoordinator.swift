@@ -27,13 +27,16 @@ final class DailyGoalCoordinatorImpl {
 
     private let goalService: GoalService
     private let userCoordinator: UserCoordinator
+    private let notificationCoordinator: NotificationCoordinator
 
     init(
         goalService: GoalService,
-        userCoordinator: UserCoordinator
+        userCoordinator: UserCoordinator,
+        notificationCoordinator: NotificationCoordinator
     ) {
         self.goalService = goalService
         self.userCoordinator = userCoordinator
+        self.notificationCoordinator = notificationCoordinator
 
         setupSubscriptions()
     }
@@ -57,8 +60,6 @@ extension DailyGoalCoordinatorImpl: DailyGoalCoordinator {
                 var existingGoals = goalsSubject.value
                 existingGoals.insert(goal, at: 0)
                 goalsSubject.send(existingGoals)
-
-                // TODO: Update notification handler
                 return
             }
             .eraseToAnyPublisher()
@@ -91,6 +92,16 @@ private extension DailyGoalCoordinatorImpl {
                 }
             }
             .sinkAndStore(in: &subscriptions)
+
+        goalsSubject
+            .sink { [weak self] (goals) in
+                let lastGoalDate = goals
+                    .sorted(by: { $0.createdAt > $1.createdAt })
+                    .first?.createdAt ?? Date.distantPast
+
+                self?.notificationCoordinator.scheduleNotification(forLastGoalDate: lastGoalDate)
+            }
+            .store(in: &subscriptions)
     }
 
     func fetchGoals() {

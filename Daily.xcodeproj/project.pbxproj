@@ -61,6 +61,8 @@
 		FF0B967629DBA194006553AC /* ConfettiEmitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B967529DBA194006553AC /* ConfettiEmitterLayer.swift */; };
 		FF0B967829DBA319006553AC /* ConfettiViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B967729DBA319006553AC /* ConfettiViewRepresentable.swift */; };
 		FF0B967A29DBA489006553AC /* View+ZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B967929DBA489006553AC /* View+ZStack.swift */; };
+		FF0B967D29DBA6B7006553AC /* NotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B967C29DBA6B7006553AC /* NotificationCoordinator.swift */; };
+		FF0B967F29DBA7D2006553AC /* NotificationAssemblies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B967E29DBA7D2006553AC /* NotificationAssemblies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +119,9 @@
 		FF0B967529DBA194006553AC /* ConfettiEmitterLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiEmitterLayer.swift; sourceTree = "<group>"; };
 		FF0B967729DBA319006553AC /* ConfettiViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiViewRepresentable.swift; sourceTree = "<group>"; };
 		FF0B967929DBA489006553AC /* View+ZStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ZStack.swift"; sourceTree = "<group>"; };
+		FF0B967C29DBA6B7006553AC /* NotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCoordinator.swift; sourceTree = "<group>"; };
+		FF0B967E29DBA7D2006553AC /* NotificationAssemblies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAssemblies.swift; sourceTree = "<group>"; };
+		FF0B968029DBA927006553AC /* Daily.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Daily.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,9 +156,11 @@
 		FF0B95DB29D9D630006553AC /* Daily */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B968029DBA927006553AC /* Daily.entitlements */,
 				FF0B961E29D9E888006553AC /* Root */,
 				FF0B962129D9E8C4006553AC /* Journal */,
 				FF0B964829DA0AC2006553AC /* DailyGoals */,
+				FF0B967B29DBA6A4006553AC /* Notifications */,
 				FF0B965529DA1206006553AC /* Account */,
 				FF0B961129D9E2B5006553AC /* Login */,
 				FF0B962429D9FA9E006553AC /* User */,
@@ -375,6 +382,15 @@
 			path = Confetti;
 			sourceTree = "<group>";
 		};
+		FF0B967B29DBA6A4006553AC /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B967C29DBA6B7006553AC /* NotificationCoordinator.swift */,
+				FF0B967E29DBA7D2006553AC /* NotificationAssemblies.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -487,6 +503,7 @@
 				FF0B961629D9E54B006553AC /* ResolverEnvironmentKey.swift in Sources */,
 				FF0B965229DA0EB0006553AC /* JournalAssemblies.swift in Sources */,
 				FF0B962829D9FB25006553AC /* UserCoordinator.swift in Sources */,
+				FF0B967D29DBA6B7006553AC /* NotificationCoordinator.swift in Sources */,
 				FF0B95DD29D9D630006553AC /* DailyApp.swift in Sources */,
 				FF0B965B29DA140C006553AC /* AccountCell.swift in Sources */,
 				FF0B966D29DB9C87006553AC /* Array+Replace.swift in Sources */,
@@ -498,6 +515,7 @@
 				FF0B964529DA08E8006553AC /* View+Alert.swift in Sources */,
 				FF0B966629DB9244006553AC /* CreateGoalView.swift in Sources */,
 				FF0B966F29DB9D7E006553AC /* Checkbox.swift in Sources */,
+				FF0B967F29DBA7D2006553AC /* NotificationAssemblies.swift in Sources */,
 				FF0B95FF29D9D9B7006553AC /* CNURLSessionMock.swift in Sources */,
 				FF0B963C29DA03CF006553AC /* Publisher+Sink.swift in Sources */,
 				FF0B961029D9DE25006553AC /* LoginView.swift in Sources */,
@@ -628,6 +646,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Daily/Daily.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Daily/Preview Content\"";
@@ -657,6 +676,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Daily/Daily.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Daily/Preview Content\"";
