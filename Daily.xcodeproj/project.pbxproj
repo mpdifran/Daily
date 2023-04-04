@@ -56,6 +56,11 @@
 		FF0B966B29DB96A0006553AC /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966A29DB96A0006553AC /* LoadingButton.swift */; };
 		FF0B966D29DB9C87006553AC /* Array+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966C29DB9C87006553AC /* Array+Replace.swift */; };
 		FF0B966F29DB9D7E006553AC /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B966E29DB9D7E006553AC /* Checkbox.swift */; };
+		FF0B967129DBA116006553AC /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B967029DBA116006553AC /* ConfettiView.swift */; };
+		FF0B967429DBA157006553AC /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B967329DBA157006553AC /* Particle.swift */; };
+		FF0B967629DBA194006553AC /* ConfettiEmitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B967529DBA194006553AC /* ConfettiEmitterLayer.swift */; };
+		FF0B967829DBA319006553AC /* ConfettiViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B967729DBA319006553AC /* ConfettiViewRepresentable.swift */; };
+		FF0B967A29DBA489006553AC /* View+ZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0B967929DBA489006553AC /* View+ZStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +112,11 @@
 		FF0B966A29DB96A0006553AC /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		FF0B966C29DB9C87006553AC /* Array+Replace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Replace.swift"; sourceTree = "<group>"; };
 		FF0B966E29DB9D7E006553AC /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		FF0B967029DBA116006553AC /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		FF0B967329DBA157006553AC /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
+		FF0B967529DBA194006553AC /* ConfettiEmitterLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiEmitterLayer.swift; sourceTree = "<group>"; };
+		FF0B967729DBA319006553AC /* ConfettiViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiViewRepresentable.swift; sourceTree = "<group>"; };
+		FF0B967929DBA489006553AC /* View+ZStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ZStack.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				FF0B964429DA08E8006553AC /* View+Alert.swift */,
+				FF0B967929DBA489006553AC /* View+ZStack.swift */,
 				FF0B963E29DA046A006553AC /* Alert+Error.swift */,
 				FF0B964029DA048C006553AC /* Binding+Optional.swift */,
 			);
@@ -346,10 +357,22 @@
 		FF0B966929DB968F006553AC /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FF0B967229DBA14D006553AC /* Confetti */,
 				FF0B966A29DB96A0006553AC /* LoadingButton.swift */,
 				FF0B966E29DB9D7E006553AC /* Checkbox.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		FF0B967229DBA14D006553AC /* Confetti */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B967329DBA157006553AC /* Particle.swift */,
+				FF0B967529DBA194006553AC /* ConfettiEmitterLayer.swift */,
+				FF0B967029DBA116006553AC /* ConfettiView.swift */,
+				FF0B967729DBA319006553AC /* ConfettiViewRepresentable.swift */,
+			);
+			path = Confetti;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,10 +461,12 @@
 				FF0B965729DA1216006553AC /* AccountView.swift in Sources */,
 				FF0B961A29D9E6CC006553AC /* LoginAssemblies.swift in Sources */,
 				FF0B95DF29D9D630006553AC /* ContentView.swift in Sources */,
+				FF0B967629DBA194006553AC /* ConfettiEmitterLayer.swift in Sources */,
 				FF0B965F29DB06CA006553AC /* GoalService.swift in Sources */,
 				FF0B964129DA048C006553AC /* Binding+Optional.swift in Sources */,
 				FF0B963329D9FE31006553AC /* DailyAppViewModel.swift in Sources */,
 				FF0B962629D9FAAF006553AC /* User.swift in Sources */,
+				FF0B967129DBA116006553AC /* ConfettiView.swift in Sources */,
 				FF0B965D29DA1506006553AC /* AccountAssemblies.swift in Sources */,
 				FF0B966829DB9289006553AC /* CreateGoalViewModel.swift in Sources */,
 				FF0B962029D9E896006553AC /* RootView.swift in Sources */,
@@ -455,8 +480,10 @@
 				FF0B966B29DB96A0006553AC /* LoadingButton.swift in Sources */,
 				FF0B964A29DA0AD0006553AC /* DailyGoal.swift in Sources */,
 				FF0B965929DA126E006553AC /* AccountViewModel.swift in Sources */,
+				FF0B967429DBA157006553AC /* Particle.swift in Sources */,
 				FF0B960729D9DC4F006553AC /* NetworkAssemblies.swift in Sources */,
 				FF0B966129DB0737006553AC /* URL+Goals.swift in Sources */,
+				FF0B967829DBA319006553AC /* ConfettiViewRepresentable.swift in Sources */,
 				FF0B961629D9E54B006553AC /* ResolverEnvironmentKey.swift in Sources */,
 				FF0B965229DA0EB0006553AC /* JournalAssemblies.swift in Sources */,
 				FF0B962829D9FB25006553AC /* UserCoordinator.swift in Sources */,
@@ -474,6 +501,7 @@
 				FF0B95FF29D9D9B7006553AC /* CNURLSessionMock.swift in Sources */,
 				FF0B963C29DA03CF006553AC /* Publisher+Sink.swift in Sources */,
 				FF0B961029D9DE25006553AC /* LoginView.swift in Sources */,
+				FF0B967A29DBA489006553AC /* View+ZStack.swift in Sources */,
 				FF0B960529D9DBE9006553AC /* MainAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

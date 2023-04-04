@@ -17,6 +17,7 @@ struct JournalView: View {
     }
 
     @State private var showCreateGoalView = false
+    @State private var isEmitting = false
 
     @Environment(\.resolver) private var resolver
 
@@ -71,15 +72,22 @@ private extension JournalView {
     }
 
     var loadedContentView: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(viewModel.goals) { (goal) in
-                    DailyGoalCell(dailyGoal: goal) {
-                        viewModel.completeGoal(goal: goal)
+        ZStack {
+            ScrollView {
+                LazyVStack {
+                    ForEach(viewModel.goals) { (goal) in
+                        DailyGoalCell(dailyGoal: goal) {
+                            viewModel.completeGoal(goal: goal)
+                            isEmitting = true
+                        }
+                        .padding()
                     }
-                    .padding()
                 }
             }
+
+            ConfettiViewRepresentable(isEmitting: $isEmitting)
+                .frame(height: 1)
+                .zStackAlignment(.top)
         }
     }
 }
